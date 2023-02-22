@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfaqKeluarController;
 use App\Http\Controllers\InfaqMasukController;
+use App\Http\Controllers\RekapitulasiInfaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,10 @@ Route::middleware(['auth', 'user-access:bendahara,admin'])->group(
         Route::get('/editoutkasmasjid/{id}', [InfaqKeluarController::class, 'ediinfaqkeluar']);
         Route::post('/simpanoutkasmasjid/{id}', [InfaqKeluarController::class, 'updateinfaqkeluar']);
         Route::get('/hapuskasmasjid/{id}', [InfaqKeluarController::class, 'destroy']);
+        // all
+        Route::get('/rekapinfaq', [RekapitulasiInfaqController::class, 'indexrekap']);
+        Route::get('/cetaksemuainfaq', [RekapitulasiInfaqController::class, 'cetaksemuainfaq']);
+        Route::get('/cetakinfaq/{awal}/{akhir}', [RekapitulasiInfaqController::class, 'cetakinfaq']);
     }
 );
 
@@ -75,6 +80,7 @@ Route::middleware(['auth', 'user-access:santri'])->group(function () {
 });
 
 Route::middleware(['auth', 'user-access:amil'])->group(function () {
-
     Route::get('/amil/home', [HomeController::class, 'amilHome'])->name('amil.home');
+});
+Route::middleware(['auth', 'user-access:amil,admin'])->group(function () {
 });
