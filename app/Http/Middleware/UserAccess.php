@@ -14,13 +14,15 @@ class UserAccess
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $userType)
+    public function handle(Request $request, Closure $next, ...$type)
     {
-        if (auth()->user()->type == $userType) {
+        // if (auth()->user()->type == $userType) {
+        //     return $next($request);
+        // }
+        if (in_array($request->user()->type,  $type)) {
             return $next($request);
         }
-
-        return response()->json(['Tidak Memiliki Akses Ke Halaman INI.']);
+        return redirect('/');
         /* return response()->view('errors.check-permission'); */
     }
 }

@@ -17,18 +17,6 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <!-- <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div> -->
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -40,6 +28,7 @@
                         </p>
                     </a>
                 </li>
+
                 @if(auth()->user()->type=="admin")
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -96,6 +85,29 @@
                     </ul>
                 </li>
                 <!-- end santri -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link  ">
+                        <i class="nav-icon fa fa-mosque"></i>
+                        <p>
+                            Infaq Masjid
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview active">
+                        <li class="nav-item">
+                            <a href="/infaqmasuk" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Infaq Masuk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/infaqkeluar" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Infaq Keluar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <!-- Sidebar Amil -->
                 @endif
@@ -180,8 +192,7 @@
                 @endif
                 <!-- End Sidebar Amil -->
                 <!-- Sidebar Bendahara -->
-                @if(auth()->user()->type=="admin")
-                @elseif(auth()->user()->type=="bendahara")
+                @if(auth()->user()->type=="bendahara")
                 <li class="nav-item">
                     <a href="#" class="nav-link  ">
                         <i class="nav-icon fa fa-mosque"></i>

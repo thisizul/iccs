@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InfaqKeluarController;
+use App\Http\Controllers\InfaqMasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,19 +39,32 @@ All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 });
+// route untuk role: Admin & Bendahara
+Route::middleware(['auth', 'user-access:bendahara,admin'])->group(
+    function () {
+        // Infaq Masuk
+        Route::get('/infaqmasuk', [InfaqMasukController::class, 'indexinfaqmasuk']);
+        Route::get('/addkasmasjid', [InfaqMasukController::class, 'addkasmasjid']);
+        Route::post('/storekasmasjid', [InfaqMasukController::class, 'storekasmasjid']);
+        Route::post('/simpankasmasjid/{id}', [InfaqMasukController::class, 'updateinfaqmasuk']);
+        Route::get('/editinfaqmasuk/{id}', [InfaqMasukController::class, 'editinfaqmasuk']);
+        Route::get('/hapusinfaqmasuk/{id}', [InfaqMasukController::class, 'destroyinfaqmasuk']);
+        // Infaq Keluar
+        Route::get('/infaqkeluar', [InfaqKeluarController::class, 'indexinfaqkeluar']);
+        Route::get('/addoutkasmasjid', [InfaqKeluarController::class, 'createinfaqkeluar']);
+        Route::post('/storeoutkasmasjid', [InfaqKeluarController::class, 'storeinfaqkeluar']);
+        Route::get('/editoutkasmasjid/{id}', [InfaqKeluarController::class, 'ediinfaqkeluar']);
+        Route::post('/simpanoutkasmasjid/{id}', [InfaqKeluarController::class, 'updateinfaqkeluar']);
+        Route::get('/hapuskasmasjid/{id}', [InfaqKeluarController::class, 'destroy']);
+    }
+);
 
-/*------------------------------------------
---------------------------------------------
-All Admin Routes List
---------------------------------------------
---------------------------------------------*/
 Route::middleware(['auth', 'user-access:bendahara'])->group(function () {
-
     Route::get('/bendahara/home', [HomeController::class, 'bendaharaHome'])->name('bendahara.home');
 });
+
 Route::middleware(['auth', 'user-access:ustad'])->group(function () {
 
     Route::get('/ustad/home', [HomeController::class, 'ustadHome'])->name('ustad.home');
