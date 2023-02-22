@@ -108,6 +108,82 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-brain"></i>
+                        <p>
+                            Data Master
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/jamaah" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Jamaah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/mustahik" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Penerima Zakat</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-scale-balanced"></i>
+                        <p>
+                            Zakat
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/zakatfitrahmasuk" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Zakat Fitrah Masuk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/zakatmalmasuk" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Zakat Mal Masuk</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Rekapitulasi
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="/rekapzakatfitrah" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Rekapitulasi Zakat Fitrah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/rekapzakatmaal" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Rekapitulasi Zakat Maal</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="rekapjamaah" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Rekapitulasi Jamaah</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <!-- Sidebar Amil -->
                 @endif

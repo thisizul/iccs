@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FitrahController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -83,4 +84,5 @@ Route::middleware(['auth', 'user-access:amil'])->group(function () {
     Route::get('/amil/home', [HomeController::class, 'amilHome'])->name('amil.home');
 });
 Route::middleware(['auth', 'user-access:amil,admin'])->group(function () {
+    Route::get('/zakatfitrahmasuk', [FitrahController::class, 'index']);
 });
