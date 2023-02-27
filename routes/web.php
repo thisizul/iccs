@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\FitrahController;
+use App\Http\Controllers\HargaberasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfaqKeluarController;
 use App\Http\Controllers\InfaqMasukController;
+use App\Http\Controllers\JamaahController;
 use App\Http\Controllers\RekapitulasiInfaqController;
+use App\Http\Controllers\ZakatmalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,4 +88,19 @@ Route::middleware(['auth', 'user-access:amil'])->group(function () {
 });
 Route::middleware(['auth', 'user-access:amil,admin'])->group(function () {
     Route::get('/zakatfitrahmasuk', [FitrahController::class, 'index']);
+    Route::get('/addinfitrah', [FitrahController::class, 'addinfitrah']);
+    Route::post('/simpanfitrah', [FitrahController::class, 'store']);
+    Route::post('/hargaberas/{id}', [HargaberasController::class, 'hargaberas']);
+    Route::get('/editinfitrah/{id}', [FitrahController::class, 'editfitrah']);
+    Route::post('/simpaninfitrah/{id}', [FitrahController::class, 'update']);
+    Route::get('/deleteinfitrah/{id}', [FitrahController::class, 'destroy']);
+    // zakat maal
+    Route::get('/zakatmalmasuk', [ZakatmalController::class, 'index']);
+    Route::get('/addzakatmal', [ZakatmalController::class, 'add']);
+    Route::post('/storeadd', [ZakatmalController::class, 'storeadd']);
+    Route::get('/editzakatmal/{id}', [ZakatmalController::class, 'editzakatmal']);
+    Route::get('/hapusmaal/{id}', [ZakatmalController::class, 'hapusmal']);
+    // jamaah
+    Route::get('/jamaah', [JamaahController::class, 'index']);
+    Route::get('/createjamaah', [JamaahController::class, 'indexcreate']);
 });
