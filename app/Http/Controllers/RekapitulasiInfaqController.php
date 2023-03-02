@@ -14,20 +14,20 @@ class RekapitulasiInfaqController extends Controller
         $a = Infaq::select('masuk')->sum('masuk');
         $b = Infaq::select('keluar')->sum('keluar');
         $jumlah = ($a - $b);
-        // $masuk = Infaq::select(DB::raw("CAST(SUM(masuk)as int)as total_masuk"));
-        // // ->groupBy(DB::raw("year(tanggal)"))
-        // // ->Pluck('total_masuk');
-        // $total_keluar = Infaq::select(DB::raw("CAST(SUM(keluar)as int)as total_keluar"))
-        //     ->groupBy(DB::raw("year(tanggal)"))
-        //     ->Pluck('total_keluar');
-        // $bulan = Infaq::select(DB::raw("year (tanggal) as bulan"))
-        //     ->groupBy(DB::raw("year(tanggal) "))
-        //     ->pluck('bulan');
-        // dd($masuk);
+        $total_masuk = Infaq::select(DB::raw("CAST(SUM(masuk)as double)as total_masuk"))
+            ->groupBy(DB::raw("year(tanggal)"))
+            ->Pluck('total_masuk');
+        $total_keluar = Infaq::select(DB::raw("CAST(SUM(keluar)as double)as total_keluar"))
+            ->groupBy(DB::raw("year(tanggal)"))
+            ->Pluck('total_keluar');
+        $bulan = Infaq::select(DB::raw("year (tanggal) as bulan"))
+            ->groupBy(DB::raw("year(tanggal) "))
+            ->pluck('bulan');
+        // dd($bulan);
 
 
 
-        return view('rekapitulasi.infaq', compact('kas', 'jumlah',));
+        return view('rekapitulasi.infaq', compact('kas', 'jumlah', 'total_masuk', 'total_keluar', 'bulan'));
     }
     public function cetaksemuainfaq()
     {

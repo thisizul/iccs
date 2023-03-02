@@ -9,6 +9,8 @@ use App\Http\Controllers\InfaqKeluarController;
 use App\Http\Controllers\InfaqMasukController;
 use App\Http\Controllers\JamaahController;
 use App\Http\Controllers\RekapitulasiInfaqController;
+use App\Http\Controllers\RekapitulasiJamaahController;
+use App\Http\Controllers\RekapitulasiZakatController;
 use App\Http\Controllers\ZakatmalController;
 
 /*
@@ -100,7 +102,22 @@ Route::middleware(['auth', 'user-access:amil,admin'])->group(function () {
     Route::post('/storeadd', [ZakatmalController::class, 'storeadd']);
     Route::get('/editzakatmal/{id}', [ZakatmalController::class, 'editzakatmal']);
     Route::get('/hapusmaal/{id}', [ZakatmalController::class, 'hapusmal']);
+    // rekap zakat
+    Route::get('/rekapzakatfitrah', [RekapitulasiZakatController::class, 'indexrekap']);
+    Route::get('/rekapzakatmaal', [RekapitulasiZakatController::class, 'indexmaal']);
+    // rekap jamaah
+    Route::get('/rekapjamaah', [RekapitulasiJamaahController::class, 'indexrekap']);
+
+
     // jamaah
     Route::get('/jamaah', [JamaahController::class, 'index']);
     Route::get('/createjamaah', [JamaahController::class, 'indexcreate']);
+    Route::post('/storejamaah', [JamaahController::class, 'storejamaah']);
+    Route::get('/editjamaah/{id}', [JamaahController::class, 'indexedit']);
+    Route::post('/simpanjamaah/{id}', [JamaahController::class, 'simpaneditjamaah']);
+    Route::get('/deletejamaah/{id}', [JamaahController::class, 'destroy']);
+    // mustahik
+    Route::get('/mustahik', [JamaahController::class, 'mustahik']);
+    Route::get('/editmustahik/{id}', [JamaahController::class, 'indexeditmustahik']);
+    Route::post('/simpanmustahik/{id}', [JamaahController::class, 'simpanmustahik']);
 });

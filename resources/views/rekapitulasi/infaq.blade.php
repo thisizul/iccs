@@ -191,6 +191,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="{{ asset ('AdminLte/dist/js/adminlte.min.js')}}"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script>
+    var infaqmasuk = <?php echo json_encode($total_masuk) ?>;
+    var infaqkeluar = <?php echo json_encode($total_keluar) ?>;
+    var bulan = <?php echo json_encode($bulan) ?>;
+
     Highcharts.chart('grafik', {
       chart: {
         type: 'column'
