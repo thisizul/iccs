@@ -77,9 +77,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/indexuser" class="nav-link">
+                            <a href="/indexsantri" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Pengaturan role</p>
+                                <p>Pengaturan Santri</p>
                             </a>
                         </li>
                     </ul>
@@ -314,8 +314,52 @@
 
                 @if(auth()->user()->type=="admin")
                 @elseif(auth()->user()->type=="ustad")
-                <h1>ustad</h1>
-                @endif
+                <li class="nav-item">
+                    <a href="#" class="nav-link  ">
+                        <i class="nav-icon fa fa-mosque"></i>
+                        <p>
+                            Santri
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview active">
+                        <li class="nav-item">
+                            <a href="/infaqmasuk" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Infaq Masuk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/infaqkeluar" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Infaq Keluar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Ngaji
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/indexngaji" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Santri</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/indexngaji" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Ngaji</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li> @endif
                 @if(auth()->user()->type=="admin")
                 @elseif(auth()->user()->type=="santri")
                 <h1>santri</h1>

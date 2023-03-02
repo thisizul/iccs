@@ -8,9 +8,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfaqKeluarController;
 use App\Http\Controllers\InfaqMasukController;
 use App\Http\Controllers\JamaahController;
+use App\Http\Controllers\NgajiController;
 use App\Http\Controllers\RekapitulasiInfaqController;
 use App\Http\Controllers\RekapitulasiJamaahController;
 use App\Http\Controllers\RekapitulasiZakatController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ZakatmalController;
 
 /*
@@ -47,6 +49,10 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+    Route::get('/indexuser', [UserController::class, 'indexuser']);
+    Route::get('/indexsantri', [UserController::class, 'indexsantri']);
+    Route::get('/addsantri/{id}', [UserController::class, 'adduserumum']);
+    Route::post('/storeuserumum/{id}', [UserController::class, 'storeuserumum']);
 });
 // route untuk role: Admin & Bendahara
 Route::middleware(['auth', 'user-access:bendahara,admin'])->group(
@@ -79,6 +85,9 @@ Route::middleware(['auth', 'user-access:bendahara'])->group(function () {
 Route::middleware(['auth', 'user-access:ustad'])->group(function () {
 
     Route::get('/ustad/home', [HomeController::class, 'ustadHome'])->name('ustad.home');
+    Route::get('/indexngaji', [NgajiController::class, 'index']);
+    Route::get('/addngaji/{id}', [NgajiController::class, 'create']);
+    Route::post('/ngaji/{id}/store', [NgajiController::class, 'store'])->name('/ngaji/{id}/store');
 });
 Route::middleware(['auth', 'user-access:santri'])->group(function () {
 
