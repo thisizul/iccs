@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\FitrahController;
 use App\Http\Controllers\HargaberasController;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +13,7 @@ use App\Http\Controllers\NgajiController;
 use App\Http\Controllers\RekapitulasiInfaqController;
 use App\Http\Controllers\RekapitulasiJamaahController;
 use App\Http\Controllers\RekapitulasiZakatController;
+use App\Http\Controllers\SantriController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ZakatmalController;
 
@@ -31,7 +33,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/infoinfaq', [Controller::class, 'infoinfaq']);
+Route::get('/infozakat', [Controller::class, 'infozakat']);
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
@@ -53,6 +56,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/indexsantri', [UserController::class, 'indexsantri']);
     Route::get('/addsantri/{id}', [UserController::class, 'adduserumum']);
     Route::post('/storeuserumum/{id}', [UserController::class, 'storeuserumum']);
+    Route::get('/index', [Controller::class, 'indexview'])->name('index');
 });
 // route untuk role: Admin & Bendahara
 Route::middleware(['auth', 'user-access:bendahara,admin'])->group(
@@ -87,15 +91,18 @@ Route::middleware(['auth', 'user-access:ustad'])->group(function () {
     Route::get('/ustad/home', [HomeController::class, 'ustadHome'])->name('ustad.home');
     Route::get('/indexngaji', [NgajiController::class, 'index']);
     Route::get('/addngaji/{id}', [NgajiController::class, 'create']);
+    Route::get('/detail/{id}', [NgajiController::class, 'detail']);
     Route::post('/ngaji/{id}/store', [NgajiController::class, 'store'])->name('/ngaji/{id}/store');
+    Route::get('/index', [Controller::class, 'indexview'])->name('index');
 });
 Route::middleware(['auth', 'user-access:santri'])->group(function () {
-
     Route::get('/santri/home', [HomeController::class, 'santriHome'])->name('santri.home');
+    Route::get('/indexsantringaji', [SantriController::class, 'indexngajisantri']);
 });
 
 Route::middleware(['auth', 'user-access:amil'])->group(function () {
     Route::get('/amil/home', [HomeController::class, 'amilHome'])->name('amil.home');
+    Route::get('/index', [Controller::class, 'indexview'])->name('index');
 });
 Route::middleware(['auth', 'user-access:amil,admin'])->group(function () {
     Route::get('/zakatfitrahmasuk', [FitrahController::class, 'index']);

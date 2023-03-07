@@ -55,31 +55,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title center">
-                Data Santri
+                Data User
               </h3>
             </div>
             <div class="card-body">
-              <!-- <a href="/addkasmasjid" class="btn btn-success">tambah data</a> -->
 
+              <a href="/addngaji/{{$user->id}}" class="btn btn-success">tambah data</a>
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Nama Santri</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col">nama</th>
+                    <th scope="col">Ustad</th>
+                    <th scope="col">Jenis Ngaji</th>
+                    <th scope="col">Halaman</th>
+                    <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($santri as $i)
-                  @if($i->type == 'santri')
+                  @foreach($ngaji as $i)
                   <tr>
-                    <td>{{$i->name}}</td>
+                    <td>{{$i->nama_santri}}</td>
+                    <td>{{$i->nama_ustad}}</td>
+                    <td>{{$i->jenis_ngaji}}</td>
+                    <td>{{$i->halaman}}</td>
+                    <td>{{$i->status}}</td>
                     <td>
-                      <!-- <a href='addngaji/{{$i->id}}' class="btn btn-info"><i class="fa fa-plus"></i></a> -->
+
                       <a href='detail/{{$i->id}}' class="btn btn-info"><i class="fa fa-pencil"></i></a>
                       <a href='hapus/{{$i->id}}' class="btn btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
-                  @endif
                   @endforeach
 
                 </tbody>

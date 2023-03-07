@@ -49,13 +49,13 @@
                 </li>
                 <!-- ustad -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <!-- <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-user"></i>
                         <p>
                             Ustad Management
                             <i class="right fas fa-angle-left"></i>
                         </p>
-                    </a>
+                    </a> -->
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/indexuser" class="nav-link">
@@ -315,13 +315,13 @@
                 @if(auth()->user()->type=="admin")
                 @elseif(auth()->user()->type=="ustad")
                 <li class="nav-item">
-                    <a href="#" class="nav-link  ">
+                    <!-- <a href="#" class="nav-link  ">
                         <i class="nav-icon fa fa-mosque"></i>
                         <p>
                             Santri
                             <i class="right fas fa-angle-left"></i>
                         </p>
-                    </a>
+                    </a> -->
                     <ul class="nav nav-treeview active">
                         <li class="nav-item">
                             <a href="/infaqmasuk" class="nav-link">
@@ -352,19 +352,24 @@
                                 <p>Data Santri</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="/indexngaji" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Ngaji</p>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li> @endif
                 @if(auth()->user()->type=="admin")
                 @elseif(auth()->user()->type=="santri")
-                <h1>santri</h1>
+                <h1>santri1</h1>
                 @endif
-
+                <!-- <li class="nav-item">
+                    <a href="/indexsantringaji" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Data Santri</p>
+                    </a>
+                </li> -->
                 <li class="nav-item">
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

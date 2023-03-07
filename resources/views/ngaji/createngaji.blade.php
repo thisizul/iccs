@@ -1,66 +1,162 @@
-<!-- <h1>create ngaji</h1>
-<h1>test create</h1>
-<form action="/ngaji/{id}/store" method="POST">
-    @csrf($santris as $i)
-    <input type="text" name="santri_id" placeholder="santri_id" value="{{$santris->santri_id}}"><br>
-    <input type="text" name="nama_santri" placeholder="nama_santri" value="{{$santris->nama_santri}}"><br>
-    <input type="text" name="nama_ustad" placeholder="nama_ustad" value="{{Auth::user()->name}}"><br>
-    <input type="text" name="jenis_ngaji" placeholder="jenis_ngaji"><br>
-    <input type="text" name="halaman" placeholder="halaman"><br>
-    <input type="text" name="tanggal" placeholder="tanggal"><br>
-    <input type="text" name="status" placeholder="status"><br>
-    <input type="submit" value="Submit">
-</form> -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<form action="/ngaji/{id}/store" method="POST">
-    @csrf($santris as $i)
-    <section class="vh-100" style="background-color: #508bfc;">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <h1>create data ngaji</h1>
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
-                            <div class="form-outline mb-4">
-                                <input input type="text" name="santri_id" placeholder="santri_id" value="{{$santris->santri_id}}" class="form-control form-control-lg">
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+
+<head>
+    <title>AdminLTE 3 | Starter</title>
+    @include('Template.head')
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        @include('Template.navbar')
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        @include('Template.sidebar')
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Starter Page</li> -->
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="card card-info card-outline">
+                    <div class="card-body">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fa fa-edit"></i> Tambah Data Ngaji
+                                </h3>
                             </div>
-                            <div class="form-outline mb-4">
-                                <input type="text" name="nama_santri" placeholder="nama santri" value="{{$santris->nama_santri}}" class="form-control form-control-lg">
-                            </div>
-                            <div class="form-outline mb-4">
-                                <input type="text" name="nama_ustad" placeholder="nama wali" value="{{Auth::user()->name}}" class="form-control form-control-lg">
-                            </div>
-                            <div class="form-outline mb-4">
-                                <select class="form-select form-control-lg" type="text" name="jenis_ngaji" placeholder="jenis ngaji" class="form-control form-control-lg">
-                                    <option selected>pilih iqro</option>
-                                    <option value="iqro 1">iqro 1</option>
-                                    <option value="iqro 2">iqro 2</option>
-                                    <option value="iqro 3">iqro 3</option>
-                                    <option value="iqro 4">iqro 4</option>
-                                    <option value="iqro 5">iqro 5</option>
-                                    <option value="iqro 6">iqro 6</option>
-                                </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <input type="text" name="halaman" placeholder="halaman" class="form-control form-control-lg">
-                            </div>
-                            <div class="form-outline mb-4">
-                                <input type="date" name="tanggal" placeholder="tanggal ngaji" class="form-control form-control-lg">
-                            </div>
-                            <div class="form-outline mb-4">
-                                <select class="form-select form-control-lg" type="text" name="status" placeholder="status" class="form-control form-control-lg">
-                                    <option selected>status</option>
-                                    <option value="lanjut">lanjut</option>
-                                    <option value="ulangi">ulanggi</option>
-                                </select>
-                            </div>
-                            <button class="btn btn-primary btn-lg btn-block" type="submit" value="sumbit">simpan</button>
-                            <hr class="my-4">
+                            <form action="/storekasmasjid" method="post">
+                                {{ csrf_field() }}
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Santri ID</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="santri_id" placeholder="santri_id" value="{{$santris->santri_id}}" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Nama Santri</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="nama_santri" placeholder="nama santri" value="{{$santris->nama_santri}}" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Nama Ustad</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="nama_ustad" placeholder="nama wali" value="{{Auth::user()->name}}" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Tipe</label>
+                                        <div class="col-sm-4">
+                                            <select type="text" class="form-control" id="jenis_ngaji" name="jenis_ngaji" placeholder="tipe" required>
+                                                @error('tipe')
+                                                <div class="text-danger">* {{ $message }}</div>
+                                                @enderror
+                                                <option selected value="">Pilih Iqro</option>
+                                                <option value="Iqro 1">Iqro 1</option>
+                                                <option value="Iqro 2">Iqro 2</option>
+                                                <option value="Iqro 3">Iqro 3</option>
+                                                <option value="Iqro 4">Iqro 4</option>
+                                                <option value="Iqro 5">Iqro 5</option>
+                                                <option value="Iqro 6">Iqro 6</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Halaman</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="halaman" placeholder="halaman" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Tanggal</label>
+                                        <div class="col-sm-4">
+                                            <input type="date" class="form-control" id="tgl_km" name="tanggal" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Status</label>
+                                        <div class="col-sm-4">
+                                            <select type="text" class="form-control" id="status" name="status" placeholder="tipe" required>
+                                                @error('tipe')
+                                                <div class="text-danger">* {{ $message }}</div>
+                                                @enderror
+                                                <option selected value="">Status</option>
+                                                <option value="lanjut">Lanjut</option>
+                                                <option value="ulangi">Ulanggi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
+                                    <a href='/infaqmasuk' title="Kembali" class="btn btn-secondary">Batal</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+
             </div>
+
+            <!-- /.content -->
         </div>
-</form>
-</section>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        @include(' Template.footer')
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="{{ asset ('AdminLte/plugins/jquery/jquery.min.js')}}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ asset ('AdminLte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset ('AdminLte/dist/js/adminlte.min.js')}}"></script>
+
+</body>
+
+</html>

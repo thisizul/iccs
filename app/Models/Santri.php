@@ -14,4 +14,8 @@ class Santri extends Model
         'alamat',
         'no_hp',
     ];
+    public function relationtongaji()
+    {
+        return $this->belongsTo(Ngaji::class);
+    }
 }

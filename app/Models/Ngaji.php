@@ -17,8 +17,8 @@ class Ngaji extends Model
         'tanggal',
         'status',
     ];
-    public function relationToSantri()
+    public function ngaji()
     {
-        return $this->belongsTo(Santri::class);
+        return $this->hasMany(Santri::class);
     }
 }
