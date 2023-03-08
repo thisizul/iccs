@@ -12,10 +12,12 @@ class SantriController extends Controller
 {
     public function indexngajisantri()
     {
-        $ngaji = Ngaji::all();
 
+        $user_name = Auth::user()->id;
 
-
+        $ngaji = Ngaji::orderByRaw("santri_id = ':id' ASC",)
+            ->groupBy('santri_id')
+            ->paginate(15);
         return view('santri.indexsantri', compact('ngaji'));
     }
 }

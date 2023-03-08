@@ -55,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card card-info card-outline">
                         <div class="card-header">
                             <h3 class="card-title center">
-                                Data User
+                                Data Santri
                             </h3>
                         </div>
                         <div class="card-body">
@@ -79,8 +79,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <td>{{$i->type}}</td>
                                         <td>
                                             <a href='addsantri/{{$i->id}}' class="btn btn-info"><i class="fa fa-plus"></i></a>
-                                            <a href='edituser/{{$i->id}}' class="btn btn-info"><i class="fa fa-pencil"></i></a>
-                                            <a href='hapus/{{$i->id}}' class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            <!-- <a href='edituser/{{$i->id}}' class="btn btn-info"><i class="fa fa-pencil"></i></a> -->
+                                            <!-- <a href='hapus/{{$i->id}}' class="btn btn-danger"><i class="fas fa-trash"></i></a> -->
                                         </td>
                                     </tr>
                                     @endif

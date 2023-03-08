@@ -18,4 +18,8 @@ class Santri extends Model
     {
         return $this->belongsTo(Ngaji::class);
     }
+    public function relationtouser()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

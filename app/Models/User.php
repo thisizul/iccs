@@ -48,4 +48,8 @@ class User extends Authenticatable
             get: fn ($value) =>  ["user", "admin", "bendahara", "ustad", "santri", "amil"][$value],
         );
     }
+    public function relationtosantri()
+    {
+        return $this->hasMany(Santri::class);
+    }
 }

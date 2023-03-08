@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="input-group col-sm-3 mb-3  ml-auto ">
                                 <input type="text" class="form-control" id="cari" name="cari" placeholder="Cari Data Berdasarkan Nama">
                                 <span class="input-group-append">
-                                    <button type="submit" value="Submit" class="btn btn-info btn-flat"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    <button type="submit" value="Submit" class="btn btn-info btn-flat"><i class="fas fa-search"></i></button>
                                 </span>
                             </div>
                         </form>

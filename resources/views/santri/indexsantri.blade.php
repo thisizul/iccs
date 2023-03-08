@@ -55,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title center">
-                Data User
+                Hallo Santri, {{Auth::user()->name}}
               </h3>
             </div>
             <div class="card-body">
@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </thead>
                 <tbody>
                   @foreach($ngaji as $i)
-                  @if($i->santri_id == 'auth->id')
+                  @if(Auth::user()->name == $i->nama_santri)
                   <tr>
                     <td>{{$i->nama_santri}}</td>
                     <td>{{$i->nama_ustad}}</td>
@@ -80,9 +80,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <td>{{$i->halaman}}</td>
                     <td>{{$i->status}}</td>
                     <td>
-
-                      <a href='detail/{{$i->id}}' class="btn btn-info"><i class="fa fa-pencil"></i></a>
-                      <a href='hapus/{{$i->id}}' class="btn btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                   @endif

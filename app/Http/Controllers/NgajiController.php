@@ -18,11 +18,11 @@ class NgajiController extends Controller
     public function store(Request $request)
     {
         Ngaji::create($request->except(['_token', 'sumbit']));
-        return redirect('/indexngaji');
+        return redirect('indexngaji');
     }
-    public function create($santri_id)
+    public function create($id)
     {
-        $santris = Ngaji::find($santri_id);
+        $santris = user::find($id);
         return view('ngaji.createngaji', compact('santris'));
         // return redirect('pengurus.ngaji.createngaji');
     }

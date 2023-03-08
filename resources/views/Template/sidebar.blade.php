@@ -362,14 +362,13 @@
                 </li> @endif
                 @if(auth()->user()->type=="admin")
                 @elseif(auth()->user()->type=="santri")
-                <h1>santri1</h1>
                 @endif
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="/indexsantringaji" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Data Santri</p>
                     </a>
-                </li> -->
+                </li>
                 <li class="nav-item">
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

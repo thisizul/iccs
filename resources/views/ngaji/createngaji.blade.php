@@ -49,20 +49,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <i class="fa fa-edit"></i> Tambah Data Ngaji
                                 </h3>
                             </div>
-                            <form action="/storekasmasjid" method="post">
+                            <form action="/ngaji/{id}/store" method="post">
                                 {{ csrf_field() }}
                                 <div class="card-body">
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Santri ID</label>
                                         <div class="col-sm-4">
-                                            <input type="text" name="santri_id" placeholder="santri_id" value="{{$santris->santri_id}}" class="form-control">
+                                            <input type="text" name="santri_id" placeholder="santri_id" value="{{$santris->id}}" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Nama Santri</label>
                                         <div class="col-sm-4">
-                                            <input type="text" name="nama_santri" placeholder="nama santri" value="{{$santris->nama_santri}}" class="form-control">
+                                            <input type="text" name="nama_santri" placeholder="nama santri" value="{{$santris->name}}" class="form-control">
                                         </div>
                                     </div>
 
@@ -120,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="card-footer">
                                     <input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-                                    <a href='/infaqmasuk' title="Kembali" class="btn btn-secondary">Batal</a>
+                                    <a href='/indexngaji' title="Kembali" class="btn btn-secondary">Batal</a>
                                 </div>
                             </form>
                         </div>

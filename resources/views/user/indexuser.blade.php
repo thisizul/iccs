@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <td>
                                             <!-- <a href='adduserumum/{{$i->id}}' class="btn btn-info"><i class="fa fa-plus"></i></a> -->
                                             <a href='edituser/{{$i->id}}' class="btn btn-info"><i class="fa fa-pencil"></i></a>
-                                            <a href='hapus/{{$i->id}}' class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            <!-- <a href='hapus/{{$i->id}}' class="btn btn-danger"><i class="fas fa-trash"></i></a> -->
                                         </td>
                                     </tr>
                                     @endforeach
