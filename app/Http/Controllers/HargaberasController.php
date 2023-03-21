@@ -10,12 +10,12 @@ class HargaberasController extends Controller
     public function index1()
     {
         $beras = Hargaberas::all();
-        return view('fitrah.index', compact('beras'));
+        return view('zakat.fitrah.index', compact('beras'));
     }
     public function hargaberas(Request $request, $id)
     {
         $beras = Hargaberas::find($id);
         $beras->update($request->all());
-        return redirect('indexfitrah');
+        return redirect('/zakatfitrahmasuk');
     }
 }

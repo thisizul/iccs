@@ -51,4 +51,8 @@ class Controller extends BaseController
         $count2 = ($a - $b);
         return view('index', compact('count', 'count1', 'count2', 'countx', 'county', 'countz', 'z1', 'z2', 'z3', 'a1', 'a2', 'a3'));
     }
+    public function test()
+    {
+        return view("test");
+    }
 }

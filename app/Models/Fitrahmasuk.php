@@ -14,8 +14,6 @@ class Fitrahmasuk extends Model
         'jumlahjiwa',
         'setuang',
         'setberas',
-
-
         'jumlahberas',
         'jumlahuang',
     ];

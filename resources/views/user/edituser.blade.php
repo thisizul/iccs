@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 
 <head>
-    <title>AdminLTE 3 | Starter</title>
+    <title>Ahito | Pengaturan Role</title>
     @include('Template.head')
 </head>
 
@@ -46,33 +46,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fa fa-edit"></i> Edit Role
+                                    <i class="fa fa-edit"></i> Edit Role: {{$users->name}}
                                 </h3>
                             </div>
                             <form method="POST" action="/simpanrole/{{$users->id}}">
                                 @csrf($users as $i)
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">id</label>
+                                        <label class="col-sm-2 col-form-label">Id</label>
                                         <div class="col-sm-4">
                                             <input readonly type="text" class="form-control" id="masuk" name="user_id" value="{{ $users->id }}" placeholder="Jumlah Pemasukan" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">nama</label>
+                                        <label class="col-sm-2 col-form-label">Nama</label>
                                         <div class="col-sm-4">
                                             <input type="text" class="form-control" id="masuk" name="nama" value="{{$users->name}}" placeholder="Jumlah Pemasukan" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row inputfield">
-                                        <label class="col-sm-2 col-form-label">role</label>
+                                        <label class="col-sm-2 col-form-label">Role</label>
                                         <div class="col-sm-4">
                                             <select type="text" class="form-control" id="role" value="{{$users->role}}" name="role" placeholder="id" required>
-                                                <option selected>{{$users->role}}</option>
-                                                <option value="1">Super Admin</option>
+                                                <option selected>{{$users->type}}</option>
+                                                <option value="1">Admin</option>
                                                 <option value="2">Bendahara</option>
                                                 <option value="0">User</option>
+                                                <option value="3">Ustad</option>
+                                                <option value="4">Santri</option>
+                                                <option value="5">Amil</option>
                                             </select>
                                         </div>
                                     </div>

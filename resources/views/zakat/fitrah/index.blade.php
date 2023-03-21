@@ -82,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title center">
-                Fitrah Masuk pindah
+                Fitrah Masuk
               </h3>
             </div>
 

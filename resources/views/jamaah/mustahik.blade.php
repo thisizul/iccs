@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <head>
     <script src="https://kit.fontawesome.com/e74f6895d1.js" crossorigin="anonymous"></script>
-    <title>AdminLTE 3 | Starter</title>
+    <title>Ahito | mustahik</title>
     @include('Template.head')
 </head>
 

@@ -39,21 +39,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
-          <h1>Informasi Kas Masjid</h1>
+          <h1>Selamat Datang</h1>
           <div class="row">
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>Saldo</h3>
-                  <p>@rupiah($count2)</p>
-                  <h4>Rincian Saldo</h4>
-                  <li>Infaq Jumat</li>
-                  <p>@rupiah($countx)</p>
-                  <li>Infaq Harian</li>
-                  <p>@rupiah($county)</p>
-                  <li>Donatur</li>
-                  <p>@rupiah($countz)</p>
+
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
@@ -65,15 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>Pemasukan<sup style="font-size: 20px"></sup></h3>
-                  <p>@rupiah($count)</p>
-                  <h4>Rincian Pemasukan</h4>
-                  <li>Infaq Jumat</li>
-                  <p>@rupiah($a1)</p>
-                  <li>Infaq Harian</li>
-                  <p>@rupiah($a2)</p>
-                  <li>Donatur</li>
-                  <p>@rupiah($a3)</p>
+
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
@@ -85,15 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>Pengeluaran</h3>
-                  <p>@rupiah($count1)</p>
-                  <h4>Rincian Sumber Dana</h4>
-                  <li>Infaq Jumat</li>
-                  <p>@rupiah($z1)</p>
-                  <li>Infaq Harian</li>
-                  <p>@rupiah($z3)</p>
-                  <li>Donatur</li>
-                  <p>@rupiah($z2)</p>
+
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
@@ -105,17 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <!-- <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>44</h3>
 
-                                    <p>User Registrations</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div> -->
               <!-- small box -->
             </div>
             <!-- akhir col -->

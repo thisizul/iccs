@@ -35,6 +35,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/infoinfaq', [Controller::class, 'infoinfaq']);
 Route::get('/infozakat', [Controller::class, 'infozakat']);
+
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
@@ -43,6 +44,9 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+Route::middleware(['auth', 'user-access:amil,admin,bendahara,ustad,santri, '])->group(function () {
+    Route::get('/dashboard', [Controller::class, 'test'])->name('index');
 });
 
 /*------------------------------------------
@@ -56,7 +60,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/indexsantri', [UserController::class, 'indexsantri']);
     Route::get('/addsantri/{id}', [UserController::class, 'adduserumum']);
     Route::post('/storeuserumum/{id}', [UserController::class, 'storeuserumum']);
-    Route::get('/index', [Controller::class, 'indexview'])->name('index');
+    Route::get('/edituser/{id}', [UserController::class, 'editrole']);
 });
 // route untuk role: Admin & Bendahara
 Route::middleware(['auth', 'user-access:bendahara,admin'])->group(
@@ -79,6 +83,8 @@ Route::middleware(['auth', 'user-access:bendahara,admin'])->group(
         Route::get('/rekapinfaq', [RekapitulasiInfaqController::class, 'indexrekap']);
         Route::get('/cetaksemuainfaq', [RekapitulasiInfaqController::class, 'cetaksemuainfaq']);
         Route::get('/cetakinfaq/{awal}/{akhir}', [RekapitulasiInfaqController::class, 'cetakinfaq']);
+        // rekap
+        Route::get('/rekapinfaq', [RekapitulasiInfaqController::class, 'indexrekap']);
     }
 );
 
@@ -86,14 +92,13 @@ Route::middleware(['auth', 'user-access:bendahara'])->group(function () {
     Route::get('/bendahara/home', [HomeController::class, 'bendaharaHome'])->name('bendahara.home');
 });
 
-Route::middleware(['auth', 'user-access:ustad'])->group(function () {
+Route::middleware(['auth', 'user-access:ustad,admin'])->group(function () {
 
     Route::get('/ustad/home', [HomeController::class, 'ustadHome'])->name('ustad.home');
     Route::get('/indexngaji', [NgajiController::class, 'index']);
     Route::get('/addngaji/{id}', [NgajiController::class, 'create']);
     Route::get('/detail/{id}', [NgajiController::class, 'detail']);
     Route::post('/ngaji/{id}/store', [NgajiController::class, 'store'])->name('/ngaji/{id}/store');
-    Route::get('/index', [Controller::class, 'indexview'])->name('index');
 });
 Route::middleware(['auth', 'user-access:santri'])->group(function () {
     Route::get('/santri/home', [HomeController::class, 'santriHome'])->name('santri.home');
@@ -102,10 +107,11 @@ Route::middleware(['auth', 'user-access:santri'])->group(function () {
 
 Route::middleware(['auth', 'user-access:amil'])->group(function () {
     Route::get('/amil/home', [HomeController::class, 'amilHome'])->name('amil.home');
-    Route::get('/index', [Controller::class, 'indexview'])->name('index');
 });
 Route::middleware(['auth', 'user-access:amil,admin'])->group(function () {
     Route::get('/zakatfitrahmasuk', [FitrahController::class, 'index']);
+
+
     Route::get('/addinfitrah', [FitrahController::class, 'addinfitrah']);
     Route::post('/simpanfitrah', [FitrahController::class, 'store']);
     Route::post('/hargaberas/{id}', [HargaberasController::class, 'hargaberas']);
@@ -121,10 +127,11 @@ Route::middleware(['auth', 'user-access:amil,admin'])->group(function () {
     // rekap zakat
     Route::get('/rekapzakatfitrah', [RekapitulasiZakatController::class, 'indexrekap']);
     Route::get('/rekapzakatmaal', [RekapitulasiZakatController::class, 'indexmaal']);
+    Route::get('/cetaksemuamaal', [RekapitulasiZakatController::class, 'cetaksemuamaal']);
+    Route::get('/cetakmaal/{awal}/{akhir}', [RekapitulasiZakatController::class, 'cetakmaal']);
+
     // rekap jamaah
     Route::get('/rekapjamaah', [RekapitulasiJamaahController::class, 'indexrekap']);
-
-
     // jamaah
     Route::get('/jamaah', [JamaahController::class, 'index']);
     Route::get('/createjamaah', [JamaahController::class, 'indexcreate']);

@@ -57,7 +57,7 @@
     <p>1. Harta tersebut di luar kebutuhan pokok yang harus dipenuhi seseorang</p>
     <p>2. Harta yang akan dizakati telah mencapai waktu satu tahun (haul) terhitung dari hari kepemilikan nishab</p>
     <p>3. Silahkan hubungi nomor di bawah ini untuk melakukan pembayaran zakat</p>
-    <p><b><a href="default.asp" target="_blank">This is a link</a></b></p>
+    <p><b><a href="https://wa.link/btydbr" target="_blank">This is a link</a></b></p>
     <br>
     <h2>Tata Cara Pembayaran Zakat Fitrah</h2>
     <p>1. Pembayaran zakat wajib menggunakan bahan makanan pokok</p>

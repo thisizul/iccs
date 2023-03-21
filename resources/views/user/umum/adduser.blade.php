@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 
 <head>
-    <title>AdminLTE 3 | Starter</title>
+    <title>Ahito | Tambah Santri</title>
     @include('Template.head')
 </head>
 
@@ -46,35 +46,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <i class="fa fa-edit"></i> Tambah user
+                                    <i class="fa fa-edit"></i> Tambah Santri
                                 </h3>
                             </div>
                             <form action="/storeuserumum/{id}" method="post">
                                 @csrf($users as $i)
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">id</label>
+                                        <label class="col-sm-2 col-form-label">Id</label>
                                         <div class="col-sm-4">
                                             <input readonly type="text" class="form-control" id="masuk" name="user_id" value="{{ $users->id }}" placeholder="Jumlah Pemasukan" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">nama</label>
+                                        <label class="col-sm-2 col-form-label">Nama</label>
                                         <div class="col-sm-4">
                                             <input readonly type="text" class="form-control" id="masuk" name="nama" value="{{$users->name}}" placeholder="Jumlah Pemasukan" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">alamat</label>
+                                        <label class="col-sm-2 col-form-label">Alamat</label>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="masuk" name="alamat" placeholder="alamat" required>
+                                            <input type="text" class="form-control" id="masuk" name="alamat" placeholder="Alamat" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">no hp</label>
+                                        <label class="col-sm-2 col-form-label">No HP</label>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="masuk" name="no_hp" placeholder="no hp" required>
+                                            <input type="text" class="form-control" id="masuk" name="no_hp" placeholder="No HP" required>
                                         </div>
                                     </div>
 
@@ -82,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="card-footer">
                                     <input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-                                    <a href='/indexkasmasjid' title="Kembali" class="btn btn-secondary">Batal</a>
+                                    <a href='/indexsantri' title="Kembali" class="btn btn-secondary">Batal</a>
                                 </div>
                             </form>
                         </div>

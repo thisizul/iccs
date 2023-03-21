@@ -35,7 +35,7 @@
                         <a class="nav-link" href="#services">Informasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/index">Dashboard</a>
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
                     </li>
                 </ul>
             </div>

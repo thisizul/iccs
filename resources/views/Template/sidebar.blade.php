@@ -21,7 +21,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="/index" class="nav-link">
+                    <a href="/dashboard" class="nav-link">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             Dashboard
@@ -85,6 +85,23 @@
                     </ul>
                 </li>
                 <!-- end santri -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Ngaji
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/indexngaji" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Santri</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link  ">
                         <i class="nav-icon fa fa-mosque"></i>
@@ -163,7 +180,12 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-
+                        <li class="nav-item">
+                            <a href="/rekapinfaq" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Rekapitulasi Infaq</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="/rekapzakatfitrah" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -314,29 +336,7 @@
 
                 @if(auth()->user()->type=="admin")
                 @elseif(auth()->user()->type=="ustad")
-                <li class="nav-item">
-                    <!-- <a href="#" class="nav-link  ">
-                        <i class="nav-icon fa fa-mosque"></i>
-                        <p>
-                            Santri
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a> -->
-                    <ul class="nav nav-treeview active">
-                        <li class="nav-item">
-                            <a href="/infaqmasuk" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Infaq Masuk</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/infaqkeluar" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Infaq Keluar</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                <!--  -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
@@ -352,23 +352,18 @@
                                 <p>Data Santri</p>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="/indexngaji" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Data Ngaji</p>
-                            </a>
-                        </li> -->
                     </ul>
-                </li> @endif
+                </li>
+                @endif
                 @if(auth()->user()->type=="admin")
                 @elseif(auth()->user()->type=="santri")
                 @endif
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="/indexsantringaji" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Data Santri</p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -377,7 +372,7 @@
 
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                        <i class="nav-icon fas fa-right-from-bracket"></i>
+                        <i class=" nav-icon fa-solid fa-arrow-right-from-bracket"></i>
                         {{ __('Logout') }}
                     </a>
                 </li>

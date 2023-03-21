@@ -28,12 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-2">
             <div class="col-sm-6">
             </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Starter Page</li>
-              </ol>
-            </div><!-- /.col -->
+            <!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
@@ -54,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-body">
                   <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Uraian</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-4">
                       <input type="text" class="form-control" id="uraian_km" name="uraian" placeholder="Uraian Pemasukan" required>
                     </div>
                   </div>

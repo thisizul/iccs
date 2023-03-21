@@ -15,8 +15,8 @@
       <tr>
         <th scope="col">Uraian</th>
         <th scope="col">Tanggal</th>
-        <th scope="col">Jumlah Jiwa</th>
-        <th scope="col">Jumlah Beras</th>
+        <th scope="col">Jumlah Masuk</th>
+        <th scope="col">Jumlah Keluar</th>
         <th scope="col">Tipe Infaq/ Sumber Dana</th>
       </tr>
       @foreach($cetak as $i)
